@@ -27,13 +27,13 @@ terraform {
     skip_region_validation      = true
     skip_credentials_validation = true
     access_key                  = "YCAJEicnNCoPdo5oBn7mF2ORc"
-    secret_key                  = "*****************************************"
+    secret_key                  = "YCNkw_AzSq_iHD0Gjf5ChCumAP3PSPHIqUSEJ-gT"
   }
 }
 
 provider "yandex" {
   zone = "ru-central1-b"
-  #    folder_id = "b1gshrppcjhgfj180qki"
+  #    folder_id = "b1ga3veup3crvmh42dbv"
 }
 
 
