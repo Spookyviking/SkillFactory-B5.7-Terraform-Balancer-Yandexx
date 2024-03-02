@@ -19,23 +19,14 @@ terraform {
       version = ">=0.101.0"
     }
   }
-  backend "s3" {
-    endpoint                    = "storage.yandexcloud.net"
-    bucket                      = "spookyviking-bucket"
-    region                      = "ru-central1-a"
-    key                         = "terraform.tfstate"
-    skip_region_validation      = true
-    skip_credentials_validation = true
-    access_key                  = "YCAJEicnNCoPdo5oBn7mF2ORc"
-    secret_key                  = "YCNkw_AzSq_iHD0Gjf5ChCumAP3PSPHIqUSEJ-gT"
+}
+
+  provider "yandex" {
+    service_account_key_file = "./key.json"
+    zone = "ru-central1-b"
+    cloud_id = "b1ge3i79ua928bbsuktm"
+    folder_id = "b1ga3veup3crvmh42dbv"
   }
-}
-
-provider "yandex" {
-  zone = "ru-central1-b"
-  #    folder_id = "b1ga3veup3crvmh42dbv"
-}
-
 
 resource "yandex_vpc_network" "network" {
   name = "network"
