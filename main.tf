@@ -12,18 +12,18 @@ locals {
 }
 
 terraform {
+  required_version = ">= 1.3.5"
   required_providers {
     yandex = {
       source  = "yandex-cloud/yandex"
       version = ">=0.101.0"
     }
   }
-  required_version = ">=  0.13"
   backend "s3" {
     endpoint                    = "storage.yandexcloud.net"
     bucket                      = "spookyviking-bucket"
     region                      = "ru-central1-a"
-    key                         = "B57/mybucket.tfstate"
+    key                         = "terraform.tfstate"
     skip_region_validation      = true
     skip_credentials_validation = true
     access_key                  = "YCAJEicnNCoPdo5oBn7mF2ORc"
